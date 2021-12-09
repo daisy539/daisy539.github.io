@@ -158,10 +158,23 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<p>title: 我的第一篇博客,使用hexo搭建博客<br>date: 2021-12-08 22:05:26<br>tags:<br>–<br>一、为了hexo下载node等组件，node-&gt;npm-&gt;cnpm-&gt;hexo<br>1.地址为nodejs.org，下载对应平台的版本</p>
-<p>2.下载安装，成功后，为了使用它自带的命令，需要添加环境变量，地址为node/node_modules。（windows添加在，属性-&gt;高级系统设置-&gt;高级-&gt;环境变量-&gt;用户环境变量path中添加</p>
-<p>3.添加成功后重启git-bash， 试探性使用命令看看有无添加生效，如npm -v和node -v查看版本信息。</p>
-<p>4.<br>   1.使用npm安装cnpm<br>       npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="https://registry.npm.taobao.cnpm/">https://registry.npm.taobao.cnpm</a><br>   2.使用cnpm安装hexo<br>       cnpm install -g hexo-cli<br>二、使用hexo</p>
+<p>title: 我的第一篇博客,使用hexo搭建博客<br>date: 2021-12-08 22:05:26<br>tags:<br>–<br>一、为了hexo下载node等组件，node-&gt;npm-&gt;cnpm-&gt;hexo<br>   1.地址为nodejs.org，下载对应平台的版本</p>
+<p>   2.下载安装，成功后，为了使用它自带的命令，需要添加环境变量，地址为node/node_modules。（windows添加在，属性-&gt;高级系统设置-&gt;高级-&gt;环境变量-&gt;用户环境变量path中添加</p>
+<p>   3.添加成功后重启git-bash， 试探性使用命令看看有无添加生效，如npm -v和node -v查看版本信息。</p>
+<p>   4.<br>      4.1使用npm安装cnpm<br>         npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="https://registry.npm.taobao.cnpm/">https://registry.npm.taobao.cnpm</a><br>      4.2使用cnpm安装hexo<br>         cnpm install -g hexo-cli<br>二、使用hexo，本地生成博客<br>    hexo server 运行服务<br>   hexo d      提交到github<br>   hexo g      重新生成<br>   hexo clean  清除<br>   hexo init   初始化目录<br>   hexo new xx 创建新文章,文件名为xx,文字为”xx” 需在文章目录 根目录/soure/_posts下使用该命令</p>
+<ol>
+<li><p>首先找一个空目录，hexo init，成为博客根目录</p>
+</li>
+<li><p>在博客根目录 hexo s，即可在本地查看你的博客，localhost：xxx（端口号）</p>
+</li>
+<li><p>博客文章在  根目录/soure/_posts 下，若更新了文章，hexo c  hexo g  hexo s 即可完成本地更新  </p>
+</li>
+</ol>
+<p>三、部署到github<br>   1.创建GitHub账号密码等（略），新建一个仓库x，x仓库名字一定要与GitHub账号名一致</p>
+<p>   2.在博客根目录下，下载插件hexo-deployer-git ，使用命令cnpm install -g –save hexo-deployer-git（成功安装后，不知何原因，找不到该命令，环境变量也尝试特地添加）<br>                               方法二：        使用命令 npm install -g –save hexo-deployer-git （本机此法后能用） </p>
+<p>   3.配置根目录下文件 _config.yml，进去后到最后一节，添加内容<br>                     type ：git<br>                     repo ：x仓库地址<br>                     branch ：master<br>   4.根目录下，hexo d</p>
+<p>   5.可用仓库地址即可访问博客 如 daisy539.github.io</p>
+<p>四、更改主题<br>   #由于是基于hexo框架，更换时寻找该框架的主题，主题可通过配置_config.yml文件更换主题文件达到更换主题<br>   1.下载主题。<br>              下载放在根目录/themes的文件夹中（创建一个放该主题） 如yilia，地址为<a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia">https://github.com/litten/hexo-theme-yilia</a>, 下载命令为 git clone <a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia%EF%BC%88%E7%9B%AE%E6%A0%87%E5%9C%B0%E5%9D%80%EF%BC%89">https://github.com/litten/hexo-theme-yilia（目标地址）</a> ./themes/yilia(目的地址)<br>   2.更换主题。<br>               配置_config.yml，extensions节，theme ：主题地址。</p>
 
       
 
